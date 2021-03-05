@@ -51,6 +51,7 @@ class DoublyLinkedList:
         last.next = new_node
         
         
+    # Pointer pof the previous nodes is passed
     def add_after_node(self, prev_node, new_val):
         
         # i.e either linked list is empty or add at head
@@ -71,6 +72,7 @@ class DoublyLinkedList:
         new_node.prev = prev_node
         prev_node.next = new_node
             
+    # The next nodes pointer is passed as an argument
     def add_before_node(self, next_node, new_val):
         
         if next_node == self.head:
