@@ -1,3 +1,12 @@
+# *** Important ***
+# To caclulate mid, always use mid = low + (high-low)//2 to avoid any overflow
+# Now what exactly is the overflow?
+# --> The overflow occurs when the size of the variable(int) is taken into consideration.
+# low+high can overflow to a value outside the permissible int range and can lead to a roolever of iteger values starting from 0 taken unsigned
+# to avoid that, (high-low) will never cause the overflow as no value is added to high.
+# Refer : https://stackoverflow.com/questions/6735259/calculating-mid-in-binary-search
+
+
 # Recursive Binary search, O(logn) time
 # Auxilary space = O(n) i.e recursive call stack space
 def binary_search(arr,x, start, end):
