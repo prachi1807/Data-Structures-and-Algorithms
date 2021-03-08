@@ -101,6 +101,23 @@ class LinkedList:
     # Deleting the entire linked list
     def del_LL(self):
         self.head= None
+        
+    # Reversing a Linked List
+    def reverse(self):
+        
+        if not self.head:
+            return None
+            
+        current_node = self.head
+        prev_node = None
+        next_node = None
+        while current_node:
+            next_node = current_node.next
+            current_node.next = prev_node
+            prev_node = current_node
+            current_node = next_node
+            
+        self.head = prev_node
             
         
         
