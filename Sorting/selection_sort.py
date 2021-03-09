@@ -1,7 +1,8 @@
-# The idea here is to have two sections of the array, one that is sorted and the other that isn't
+# The idea here is to have two sections of the array, one that is sorted and the other that isn't (Intially the whole array is unsorted)
 # We pick the smallest element from the unsorted array and add it in the sorted array
 # Time Complexity = O(n^2)
 # Auxilary space = O(1)
+# Visulaization :https://www.geeksforgeeks.org/selection-sort/
 
 def selection_sort(arr):
     for i in range(len(arr)):
