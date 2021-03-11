@@ -18,3 +18,28 @@ def insertion_sort(arr):
 
 arr = [64, 34, 25, 12, 22, 11, 90] 
 print(insertion_sort(arr))
+
+
+#**********************************************************************************************************************
+
+# Insertion sort on a LL
+# Insertion sort on a LL makes use of an additional list and does not modify the LL in place
+def insertion_sort(self):
+        if self.head == None:
+            return
+        
+        start = Node(0)
+        current = self.head
+        
+        while current:
+            dummy = start
+            while dummy.next and current.data > dummy.next.data :
+                dummy = dummy.next
+            
+            next_node = current.next
+            current.next = dummy.next
+            dummy.next = current
+            
+            current = next_node
+            
+        self.head = start.next
