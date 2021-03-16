@@ -11,6 +11,7 @@ class Stack:
         
     def pop(self):
         if self.top!=-1:
+            self.top -= 1
             return self.stack.pop()
         return -1
     
