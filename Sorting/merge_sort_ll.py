@@ -3,6 +3,11 @@
 
 
 
+# This is merge sort on a linked list
+# The resturned head of the sorted list shows None
+
+
+
 class Node:
     def __init__(self, data):
         self.data= data
@@ -33,12 +38,12 @@ class LinkedList:
             temp.next = new_node
             
             
-    def getMiddle(self, headRef):
-        if headRef==None:
-            return
+    def getMiddle(self, head):
+        if head==None and head.next==None:
+            return self.head
         
-        slow = headRef
-        fast = headRef
+        slow = head
+        fast = head
         while fast.next and fast.next.next:
             slow = slow.next
             fast = fast.next.next
@@ -48,38 +53,46 @@ class LinkedList:
         
     def merge_lists(self, a, b):
         
-        result = None
-        
         if a==None:
             return b
+            
         if b==None:
-            return a
+            return a 
         
-        if a.data<b.data:
-            result = a
-            result.next = self.merge_lists(a.next, b)
-        else:
-            result = b
-            result.next = self.merge_lists(b.next, a)
+        result = Node(0)
+        tail = result
+        
+        while a and b:
+            if a.data<b.data:
+                tail.next = a
+                a = a.next
+            else:
+                tail.next = b
+                b = b.next
             
-        return result
+            tail = tail.next 
+        
+        if not a:
+            tail.next = b
+        if not b:
+            tail.next = a
             
-            
+        return result.next
+        
     # Merge Sort on a linkedlist
-    def merge_sort(self, headRef):
+    def merge_sort(self, head):
         
-        if self.head==None or self.head.next== None:
+        if head==None or head.next== None:
             return 
         
-        mid = self.getMiddle(headRef)
+        mid = self.getMiddle(head)
         nextToMid = mid.next
         
         mid.next = None
-        L = self.merge_sort(headRef)
+        L = self.merge_sort(head)
         R = self.merge_sort(nextToMid)
         
-        sorted_list = self.merge_lists(L,R)
-        return sorted_list
+        return self.merge_lists(L,R)
             
             
 # Creating Linked List       
@@ -94,7 +107,8 @@ linkedlist.append(5)
 linkedlist.append(7)
 
 linkedlist.printll(linkedlist.head)
-print(linkedlist.head)
 print()
 
-linkedlist.printll(linkedlist.merge_sort(linkedlist.head))
+linkedlist.head = linkedlist.merge_sort(linkedlist.head)
+linkedlist.printll(linkedlist.head)
+
