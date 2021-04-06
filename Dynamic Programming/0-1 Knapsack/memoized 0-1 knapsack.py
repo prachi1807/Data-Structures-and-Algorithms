@@ -3,6 +3,11 @@
 
 # Memoization
 # Using a DP matrix to store the values
+# The parameters for initialization should ideally be the variables in the recursive call that are changing
+# So in this case it's length of wts and the value of W
+# But since we have declared the DP matrix as gloabal we can't directly use them
+# We have to initialise this matrix using constrains on the values of length of wts and W
+
 t = [[-1 for _ in range(1000)] for _ in range(100)]
 
 
