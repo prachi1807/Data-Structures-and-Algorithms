@@ -1,14 +1,14 @@
 # Here the same Recursive approach is used, except for every value that we get, we store it in the matrix "t"
 # So that if we have to calculate the value of the same entity again, we already have it stored
 
-
 # Memoization
 # Using a DP matrix to store the values
 t = [[-1 for _ in range(1000)] for _ in range(100)]
 
 
 def knapsack(wts, val, W, length):
-  
+
+    
     # Base Condition:
     # Smallest valid weight = 0 kg
     # Smallest possible capacity value = 0 
@@ -25,11 +25,13 @@ def knapsack(wts, val, W, length):
     # There are further 2 choices, either take the element or don't
     # So we check profit wise, if the element will yiled greater profit, we'll take it else call the function for the rest of the array
     if wts[length-1]<=W:
+        t[length][W] = max((val[length-1] + knapsack(wts, val, W - wts[length-1], length-1)), (knapsack(wts, val, W, length-1)))
         return max((val[length-1] + knapsack(wts, val, W - wts[length-1], length-1)), (knapsack(wts, val, W, length-1)))
     
     # Casse-2: no
     # Then we simple do not need that element and we can move to the remaining array
     else:
+        t[length][W] = knapsack(wts, val, W, length-1)
         return knapsack(wts, val, W, length-1)
     
     # Choice Diagram
