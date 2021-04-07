@@ -43,9 +43,9 @@ def knapsack(wts, val, W, length):
 
 
 
-wts = [1,3,5,4]
-val = [1,4,7,5]
-W = 7   # This is capacity of the knapsack
+wts = [1, 1, 1]
+val = [10, 20, 30]
+W = 2   # This is capacity of the knapsack
 
 # function should return maximum profit
 print(knapsack(wts, val, W, len(wts)))
