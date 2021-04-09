@@ -1,4 +1,4 @@
-# Subset Sum Problem
+# Subset Sum Problem reference https://youtu.be/_gPcYovP7wc
 # Problem Statement: Given an integer array "nums" and an integer "sums", output where any subset of nums can sum upto to "sum"
 # Output: Boolean (True/False)
 
