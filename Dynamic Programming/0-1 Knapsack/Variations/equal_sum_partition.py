@@ -9,7 +9,7 @@
 
 # *********************NOTE**********************
 # If the sum of the elements in "nums" is even, then and only then is an equal sum partition possible
-
+# T[len(nums)+1][sums+1]
 t = [[0 for _ in range(12)] for _ in range(5)]
 def subset_sum(nums, sums):
     
