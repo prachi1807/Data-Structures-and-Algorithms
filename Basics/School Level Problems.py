@@ -11,7 +11,7 @@ def armstrongNumber (n):
     return "No"
      
 # Floyd Triangle - https://practice.geeksforgeeks.org/problems/floyds-triangle1222/1/?category[]=Mathematical&category[]=Mathematical&difficulty[]=-2&page=1&sortBy=accuracy&query=category[]Mathematicaldifficulty[]-2page1sortByaccuracycategory[]Mathematical
-# Not Working
+# Not Working on GFG
 # Time - O(n^2)
 # Space = O(1)
 def printFloydTriangle(N):
