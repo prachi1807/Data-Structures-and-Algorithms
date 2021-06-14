@@ -1,3 +1,3 @@
 # Data-Structures-and-Algorithms
 
-Adding the codes I've implemented as naive as it is
+Repository of all DSA concepts covered so far.
