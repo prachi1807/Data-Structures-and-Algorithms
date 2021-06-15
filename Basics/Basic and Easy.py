@@ -35,3 +35,33 @@ def numberOfPaths(n,m):
     return numberOfPaths(n-1, m) + numberOfPaths(n, m-1)
 
 print(numberOfPaths(2,6))
+
+
+
+# Check if number is fibonacci
+
+# Method 1
+
+# Time - O(N) for a bigger number, O(1) if number is small
+# Space - O(1)
+
+def checkFibonacci(N):
+    a = 0
+    b = 1
+    while True:
+        c = a+b
+        a = b
+        b = c
+        if b==N:
+            return True
+        elif b>N:
+            return False
+        
+print(checkFibonacci(56))
+
+# Method -2 (Using formula)
+# A number "n" is said to be a fibonacci number if and only if either of (5*n2 + 4) or (5*n2 – 4) is a perfect square (weird)
+
+
+
+
