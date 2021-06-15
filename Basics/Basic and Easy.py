@@ -63,5 +63,12 @@ print(checkFibonacci(56))
 # A number "n" is said to be a fibonacci number if and only if either of (5*n2 + 4) or (5*n2 – 4) is a perfect square (weird)
 
 
+# GCD
+def gcd(a,b):
+    if not a:
+        return b
+    return gcd(b%a, a)
+
+
 
 
