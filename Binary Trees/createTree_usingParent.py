@@ -1,3 +1,27 @@
+# Simpler solution to this problem in Java with Time complexity O(n). Here are the steps to follow;
+
+# 1) Create HashMap of all array values as keys and indexes as values. If for any key there are multiple values, then it's stored comma separated.
+
+# 2) Create an empty Stack and insert the first node with index value of -1 as root.
+
+# 3) Iterate over the stack till its not empty, keep popping the elements from it.
+
+# 4) Set currentNode = stack.pop();
+
+# 5) For each popped element get its corresponding values from Hashmap.
+
+# 6) For each value retireved in step 4 do following:
+
+# a) if value if not null and there are multiple values comma separated, then add it as left and right node to the stack, and simultaneously set the reference from the currentNode to the child nodes which you just added to stack.
+
+# b) if value is not null, and there is just a single value then add it to stack as left child and simultaneously update the reference from the currentNode to the leftChild.
+
+# c) if value is null, then continue to the next iteration.
+
+# 7) Go to step 3, until stack is empty.
+
+
+
 class Node():
     def __init__(self, val):
         self.val = val
