@@ -20,7 +20,51 @@
 
 # 7) Go to step 3, until stack is empty.
 
+def createTree(parent):
+    
+    hash_map = dict()
+    for i in range(len(parent)):
+        if parent[i] in hash_map:
+            hash_map[parent[i]].append(i)
+            
+        else:
+            hash_map[parent[i]] = [i]
+            
+    print(hash_map)
+            
+            
+    
+    # create a stack and add the node with parent value -1 to it, its the root
+    curr = hash_map[-1][0]
+    print(curr)
+    stack = [Node(curr)]
+    
+    #iterate while stack is not empty
+    while stack:
+        curr_vals = hash_map[stack[-1].val]
+        print(curr_vals)
+        current_node = stack.pop()
+        
+        
+        if curr_vals is not None:
+            if len(curr_vals) > 1:
+                
+                right = Node(curr_vals[1])
+                stack.append(right)
+                current_node.right = right
+                
+                
+                left = Node(curr_vals[0])
+                stack.append(left)
+                current_node.left = left
+                
+                
+            else:
+                left = Node(curr_vals[0])
+                stack.append(left)
+                current_node.left = left
 
+#-------------------------------------------------------------------------------------
 
 class Node():
     def __init__(self, val):
