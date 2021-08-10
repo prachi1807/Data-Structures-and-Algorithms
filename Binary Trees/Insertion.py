@@ -42,7 +42,7 @@ def insert(root, val):
     # doing an level order traveral till we find an empty spot
     while queue:
         temp = queue[0]
-        queue.pop()
+        queue.pop(0)
         
         if not temp.left:
             temp.left = Node(val)
