@@ -32,6 +32,7 @@ def bfs_traversal(root):
 
 # 3 types - inorder, preorder and postorder
 
+# recursive
 def in_order(root):
     
     temp = root
@@ -42,7 +43,30 @@ def in_order(root):
     in_order(temp.left)
     print(temp.val, end= " ")
     in_order(temp.right)
+
+# iterative
+def inorder(root):
     
+    # we will be using a stack
+    current = root
+    stack = []
+    
+    while True:
+        
+        if current is not None:
+            stack.append(current)
+            current = current.left  #takes to left extreme of present root
+            
+        elif stack:
+            current = stack.pop()
+            print(current.val, end=" ")
+            
+            # now point to left half
+            current = current.right
+            
+        else:
+            break
+
     
 def pre_order(root):
     
