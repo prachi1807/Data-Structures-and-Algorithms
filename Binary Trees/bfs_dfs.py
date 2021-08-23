@@ -66,6 +66,43 @@ def inorder(root):
             
         else:
             break
+            
+            
+# inorder without extra space
+# Morris traversals 
+# time - O(n)
+
+def morris_traversal(root):
+    
+    current = root
+    
+    while current is not None:
+        
+        if current.left is None:
+            yield current.val
+            current = current.right
+            
+        else:
+            
+            # let's find inorder predecessor of current
+            pre = current.left
+            
+            while pre.right is not None and pre.right is not current:
+                pre = pre.right
+                
+            if pre.right is None:
+                
+                # make current as right child of its inorder predecessor
+                pre.right = current
+                current = current.left
+            
+            else:
+                
+                # Revert the changes made in the 'if' part to restore the original tree. i.e., fix the right child of predecessor
+                pre.right = None
+                yield current.val
+                current = current.right
+            
 
     
 def pre_order(root):
@@ -116,3 +153,6 @@ pre_order(root)
 print()
 post_order(root)
 
+
+for i in morris_traversal(root):
+    print(i, end = " ")
