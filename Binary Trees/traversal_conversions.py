@@ -1,7 +1,7 @@
 # Postorder from given Inorder and Preorder
 
 # Method-1
-# No really construction the tree, just output the array basis the given 2
+# No really constructing the tree, just output the array basis the given 2
 # time - O(n)
 # space - recursion stack space
 
@@ -20,10 +20,10 @@ def to_postorder(inorder, preorder, n):
     
     # if left subtree is not empty
     if root != 0:
-        to_postorder(inorder, preorder[1:n], n)
+        to_postorder(inorder, preorder[1:n], root)
         
     if root != n-1:
-        to_postorder(inorder[root+1 : n], preorder[root+1:n], n)
+        to_postorder(inorder[root+1 : n], preorder[root+1:n], n-root-1)
         
     print(preorder[0], end=" ")
     
