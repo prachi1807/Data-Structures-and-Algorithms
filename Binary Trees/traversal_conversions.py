@@ -37,7 +37,7 @@ to_postorder(inorder, preorder, len(inorder))
 # Method-2
 # using a hashmap to store indices of inorder and then recursively traverse to find preorder indices
 
-# time - O(n^2), O(n) for traversing the array and O(n) for the search that's inside this traversal.
+# time - O(n)
 # space - recursion stack space
 
 def to_postorder(inorder, preorder, inStr, inEnd):
